@@ -1,17 +1,16 @@
 package lk.ijse.springmvcproject.controller;
 
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequestMapping("ControllerOne")
-public class ControllerOne implements InitializingBean {
+public class ControllerOne   {
 
-    public ControllerOne() {
-        System.out.println("Controller One Instantiated ");
-    }
+
 
     //mapping methods//Handler methods
     @GetMapping
@@ -19,8 +18,5 @@ public class ControllerOne implements InitializingBean {
         System.out.println("Request Received");
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("Controller one is ready to use");
-    }
+
 }
