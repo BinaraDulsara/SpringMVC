@@ -6,21 +6,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("ControllerOne")
-public class ControllerOne implements InitializingBean {
+@RequestMapping("two")
+public class ControllerTwo implements InitializingBean {
 
-    public ControllerOne() {
-        System.out.println("Controller One Instantiated ");
+    public ControllerTwo() {
+        System.out.println("Controller Two Instantiated ");
     }
 
-    //mapping methods//Handler methods
     @GetMapping
-    public void testMethod(){
-        System.out.println("Request Received");
+    public String testTwo(){
+        return "Hello mf";
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("Controller one is ready to use");
+        System.out.println("controller two is ready to use");
     }
 }
